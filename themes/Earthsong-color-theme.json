@@ -1,0 +1,285 @@
+{
+	"name": "Earthsong",
+	"type": "dark",
+	"colors": {
+    "editor.background": "#36312C",
+    "editor.foreground": "#FFFFFFCC",
+    "editor.lineHighlightBackground": "#26231F",
+    "editor.lineHighlightBorder": "#26231F",
+    "activityBar.background": "#36312C",
+    "activityBar.foreground": "#FFFFFFCC",
+    "activityBarBadge.background": "#F8BB39",
+    "activityBarBadge.foreground": "#1A1815",
+    "sideBar.background": "#1A1815",
+    "sideBarSectionHeader.background": "#26231F",
+    "editorGroupHeader.tabsBackground": "#1A1815",
+    "tab.inactiveBackground": "#26231F",
+    "statusBar.foreground": "#1A1815",
+    "statusBar.background": "#60D5EFCC",
+    "statusBar.debuggingBackground": "#FE4450CC",
+    "statusBar.noFolderBackground": "#60D5EFCC",
+    "button.background": "#F8BB39",
+    "button.foreground": "#1A1815",
+    "textLink.foreground": "#60D5EFCC",
+    "textLink.activeForeground": "#60D5EFCC",
+    "list.activeSelectionForeground": "#FFFFFFCC",
+    "list.activeSelectionBackground": "#60D5EF66", // 40%
+    "list.errorForeground": "#FE4450B3", // 70%
+    "list.warningForeground": "#F8BB39",
+    "list.highlightForeground": "#60D5EF",
+    "list.focusBackground": "#60D5EF66", // 40%
+    "focusBorder": "#60D5EF",
+    "inputOption.activeForeground": "#26231F",
+    "inputOption.activeBackground": "#60D5EF",
+    "inputValidation.errorForeground": "#1A1815",
+    "inputValidation.errorBackground": "#FE4450E6",
+    "editor.findMatchHighlightBackground": "#60D5EF4D", // 30%
+    "editor.wordHighlightBackground": "#60D5EF4D", // 30%
+    "editor.selectionForeground": "#FFFFFFCC",
+    "editor.selectionBackground": "#60D5EF66", // 40%
+    "editorWidget.background": "#26231FE6", // 90%, gives slight transparency
+    "editorSuggestWidget.highlightForeground": "#60D5EF",
+    "editorSuggestWidget.selectedBackground": "#60D5EF66", // 40%
+    "terminalCursor.foreground": "#60D5EF4D",
+    "terminalCursor.background": "#60D5EF",
+    "terminal.selectionBackground": "#60D5EF66",
+    "gitDecoration.addedResourceForeground": "#7FAB27",
+    "gitDecoration.modifiedResourceForeground": "#F8BB39",
+    "gitDecoration.stageModifiedResourceForeground": "#F8BB39CC",
+    "gitDecoration.deletedResourceForeground": "#FF003C",
+    "gitDecoration.stageDeletedResourceForeground": "#FF003CCC",
+    "gitDecoration.untrackedResourceForeground": "#60D5EFCC",
+    "gitDecoration.ignoredResourceForeground": "#FFFFFF4D",
+    "gitDecoration.conflictingResourceForeground": "#FF003CCC",
+  },
+	"tokenColors": [
+    /**
+     * Font Colors
+     */
+    {
+      "name": "Language Keywords",
+			"scope": [
+        "storage",
+        "keyword",
+        "constant",
+        "punctuation.accessor",
+        "punctuation.separator",
+        "punctuation.terminator",
+        "punctuation.definition.array",
+        "punctuation.definition.class",
+        "punctuation.definition.tag",
+        "punctuation.definition.block.sequence",
+        "punctuation.definition.arguments",
+        "punctuation.definition.decorator",
+        "punctuation.definition.parameters",
+        "support.type",
+        "meta.tag.block.any",
+
+        /**
+         * PHP specific.
+         */
+        "source.php punctuation.definition.begin.bracket",
+        "source.php punctuation.definition.end.bracket",
+        "source.php meta.function storage.type.function",
+        
+        /**
+         * Javascript specific.
+         */
+        "source.js meta.class punctuation.definition.block", // Set curly brace color for the class.
+        "source.js meta.class meta.var.expr storage.type", // For the `let` keyword.
+        "source.js meta.method.declaration meta.parameters", // Method argument parenthasees.
+        "source.js meta.method.declaration storage.type.function.arrow", // Javascript arrow functions.
+        "source.js meta.brace.round",
+        "source.js string meta.template.expression",
+
+        /** 
+         * Markdown
+         */
+        "text.html.markdown punctuation.definition"
+			],
+			"settings": {
+        "foreground": "#DB784D"
+			}
+    },
+    {
+      "name": "Root - Light",
+			"scope": [
+        "source",
+        "keyword.operator.return-value",
+        "variable.other.property",
+        "variable.other.object.property",
+        "punctuation.section.array",
+        "punctuation.definition.dict",
+
+        /**
+         * PHP specific.
+         *
+         * This is so that PHP's return type declaration can be set to white.
+         * Because of this, we have to explicitly define the language keywords
+         * under the `storage.type` namespace whilst in the PHP context.
+         */
+        "source.php meta.function storage.type",
+
+        /**
+         * Javascript specific stuff.
+         */
+        "source.js meta.objectliteral punctuation.definition.block", // Override brown curly braces for standard objects.
+        "source.js constant.language.import-export-all"
+			],
+			"settings": {
+        "foreground": "#FFFFFFCC"
+			}
+    },
+    {
+      "name": "User Defined Functions / Methods",
+      "scope": [
+        "entity.name.function",
+
+        /**
+         * Javascript specfic.
+         */
+        "source.js meta.method.declaration storage.type"
+      ],
+      "settings": {
+        "foreground": "#7FAB27"
+      }
+    },
+    {
+      "name": "Variables / Keys / Class Property Definitions",
+			"scope": [
+        "variable",
+        // "meta.object-literal.key",
+        // "support.type.property-name",
+        "entity.other.attribute-name", // HTML attributes and such.
+
+        /**
+         * YAML specific.
+         */
+        // "source.yaml entity.name.tag"
+			],
+			"settings": {
+        "foreground": "#60D5EFCC"
+			}
+    },
+    {
+      "name": "Javascript Object Keys",
+			"scope": [
+        "meta.object-literal.key",
+        "source.yaml entity.name.tag",
+        "support.type.property-name"
+			],
+			"settings": {
+        "foreground": "#60D5EFB3"
+			}
+    },
+    {
+      "name": "Strings",
+      "scope": [
+        "string",
+        "constant.numeric",
+        "string.quoted",
+        "punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#F8BB39"
+      }
+    },
+    {
+      "name": "Base Language Functions",
+      "scope": [
+        "support.function",
+        "meta.function-call",
+        "source.html entity.name.tag",
+        "source.vue entity.name.tag",
+        "entity.name.tag.block.any",
+        "string.regexp punctuation.definition"
+      ],
+      "settings": {
+        "foreground": "#F92672"
+      }
+    },
+    {
+      "name": "Classes & Self Context",
+      "scope": [
+        "entity.name.type.class",
+        "entity.other.inherited-class",
+        "entity.other.alias",
+        "support.class",
+        "variable.language.this",
+
+        /** 
+         * Javascript stuff.
+         */
+        "source.js entity.name.type"
+      ],
+      "settings": {
+        "foreground": "#FF6700"
+      }
+    },
+		{
+			"name": "Comments and Documentation",
+			"scope": [
+        "comment",
+        "comment keyword",
+        "comment storage",
+        "comment variable",
+        "comment punctuation.separator",
+        
+        /**
+         * Javascript specific.
+         */
+        "source.js comment.block punctuation.definition.block", // Overrides the Javascript docblocks for the `@` character.
+        "source.js meta.objectliteral comment.block punctuation.definition.block",
+        "source.js comment.block entity.name.type",
+        "source.js variable.other.jsdoc"
+			],
+			"settings": {
+        "foreground": "#FFFFFF4D"
+			}
+    },
+
+    /**
+     * Font Styles
+     */
+    {
+      "name": "Normal",
+			"scope": [
+        "comment keyword.other.type",
+        "comment.block",
+        "variable.other.property",
+        "variable.other.object.property"
+      ],
+			"settings": {
+      "fontStyle": ""
+			}
+    },
+    {
+      "name": "Bold",
+			"scope": [
+        "comment keyword.other",
+        "comment storage"
+			],
+			"settings": {
+        "fontStyle": "bold"
+			}
+    },
+    {
+      "name": "Italic",
+			"scope": [
+        "comment",
+        "comment support.class",
+        "variable"
+			],
+			"settings": {
+      "fontStyle": "italic"
+			}
+    },
+    {
+      "name": "Bold - Italic",
+			"scope": [],
+			"settings": {
+      "fontStyle": "bold italic"
+			}
+    }
+	]
+}
